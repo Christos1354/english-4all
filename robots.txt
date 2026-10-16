@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://english-lessons-4all.pages.dev/sitemap.xml
+Sitemap: https://english-4all.pages.dev/sitemap.xml
