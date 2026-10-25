@@ -180,7 +180,7 @@ details.lvl summary .st{margin-inline-start:auto;white-space:nowrap}
 <div class="wrap" id="app"></div>
 <div class="wrap" style="padding-top:0">
   <div class="foot"><p id="intro" style="margin:0 0 12px">Δωρεάν μαθήματα αγγλικής γραμματικής για Έλληνες: 120 μαθήματα στα ελληνικά, ασκήσεις με διόρθωση, ήχος και 1.000 λέξεις λεξιλόγιο. Χωρίς εγγραφή, χωρίς διαφημίσεις.</p>
-    <span id="ver">Αγγλικά σε 5 λεπτά · Έκδοση 23-10-2026 12:28</span><br>
+    <span id="ver">Αγγλικά σε 5 λεπτά · Έκδοση 25-10-2026 17:39</span><br>
     © Christos S Magides · <a href="mailto:cyp11111@gmail.com" style="color:inherit">cyp11111@gmail.com</a> · All rights reserved
   </div>
 </div>
@@ -2542,7 +2542,7 @@ function loadPack(l,cb){
   if(l==="el"){PACK=null;applyDir("el");cb();return}
   if(window["PACK_"+l]){PACK=window["PACK_"+l];applyDir(l);cb();return}
   app.innerHTML=`<div class="card center" style="margin-top:40px">⏳</div>`;
-  const s=document.createElement("script");s.src="lang-"+l+".js?v=23-10-2026 12:28";
+  const s=document.createElement("script");s.src="lang-"+l+".js?v=25-10-2026 17:39";
   s.onload=()=>{PACK=window["PACK_"+l]||null;applyDir(l);cb()};
   s.onerror=()=>{PACK=null;applyDir("el");cb()};
   document.head.appendChild(s);
@@ -2631,6 +2631,7 @@ version:"Αγγλικά σε 5 λεπτά · Έκδοση {0}",
 goTo:"🔢 Πήγαινε στο μάθημα:",goBtn:"Πάμε",badNum:"Γράψτε αριθμό από 1 έως {0}"
 };
 const LANG_ALL=[["el", "🇬🇷", "Ελληνικά", "Εξηγήσεις στα ελληνικά"], ["en", "🌍", "English (simple)", "Easy English explanations — for every nationality"], ["ar", "ع", "العربية", "الشرح باللغة العربية"], ["tr", "🇹🇷", "Türkçe", "Türkçe açıklamalar"], ["vi", "🇻🇳", "Tiếng Việt", "Giải thích bằng tiếng Việt"], ["ru", "🇷🇺", "Русский", "Объяснения на русском"], ["ro", "🇷🇴", "Română", "Explicații în limba română"], ["fr", "🇫🇷", "Français", "Explications en français"], ["uk", "🇺🇦", "Українська", "Пояснення українською"], ["bg", "🇧🇬", "Български", "Обяснения на български"], ["fil", "🇵🇭", "Filipino", "Paliwanag sa Filipino (Tagalog)"], ["si", "🇱🇰", "සිංහල", "සිංහලෙන් පැහැදිලි කිරීම්"], ["ne", "🇳🇵", "नेपाली", "नेपालीमा व्याख्या"], ["hi", "🇮🇳", "हिन्दी", "हिन्दी में व्याख्या"], ["es", "🇪🇸", "Español", "Explicaciones en español"], ["pt", "🇧🇷", "Português", "Explicações em português"], ["de", "🇩🇪", "Deutsch", "Erklärungen auf Deutsch"], ["it", "🇮🇹", "Italiano", "Spiegazioni in italiano"], ["pl", "🇵🇱", "Polski", "Wyjaśnienia po polsku"], ["fa", "ف", "فارسی", "توضیحات به فارسی"], ["ur", "ا", "اردو", "اردو میں وضاحت"], ["bn", "🇧🇩", "বাংলা", "বাংলায় ব্যাখ্যা"], ["zh", "🇨🇳", "中文", "中文讲解"], ["id", "🇮🇩", "Bahasa Indonesia", "Penjelasan dalam bahasa Indonesia"], ["he", "א", "עברית", "הסברים בעברית"], ["ja", "🇯🇵", "日本語", "日本語の説明"], ["ko", "🇰🇷", "한국어", "한국어 설명"]];
+const NOVICE={"el": "🌱 Novice – Αρχάριος · Αγγλικά από το μηδέν", "ar": "🌱 Novice – مبتدئ · الإنجليزية من الصفر", "bg": "🌱 Novice – Начинаещ · Английски от нулата", "bn": "🌱 Novice – শিক্ষানবিশ · শূন্য থেকে ইংরেজি", "de": "🌱 Novice – Anfänger · Englisch von null", "en": "🌱 Novice – Beginner · English from zero", "es": "🌱 Novice – Principiante · Inglés desde cero", "fa": "🌱 Novice – مبتدی · انگلیسی از صفر", "fil": "🌱 Novice – Baguhan · Ingles mula sa simula", "fr": "🌱 Novice – Débutant · L'anglais à partir de zéro", "he": "🌱 Novice – מתחילים · אנגלית מאפס", "hi": "🌱 Novice – शुरुआती · शून्य से अंग्रेज़ी", "id": "🌱 Novice – Pemula · Bahasa Inggris dari nol", "it": "🌱 Novice – Principiante · Inglese da zero", "ja": "🌱 Novice – 初心者 · ゼロからの英語", "ko": "🌱 Novice – 초보자 · 기초부터 영어", "ne": "🌱 Novice – सुरुवाती · शून्यबाट अंग्रेजी", "pl": "🌱 Novice – Początkujący · Angielski od zera", "pt": "🌱 Novice – Iniciante · Inglês do zero", "ro": "🌱 Novice – Începător · Engleză de la zero", "ru": "🌱 Novice – Начинающий · Английский с нуля", "si": "🌱 Novice – ආරම්භක · මුල සිට ඉංග්‍රීසි", "tr": "🌱 Novice – Başlangıç · Sıfırdan İngilizce", "uk": "🌱 Novice – Початківець · Англійська з нуля", "ur": "🌱 Novice – ابتدائی · صفر سے انگریزی", "vi": "🌱 Novice – Người mới học · Tiếng Anh từ con số 0", "zh": "🌱 Novice – 初学者 · 零基础英语"};
 const COLORS=["#1f5fbf","#d9480f","#178a3e","#7b3fc4","#c2185b","#00838f"];
 const KEY="agglika5_v1";
 const app=document.getElementById("app");
@@ -2653,7 +2654,7 @@ function topBar(back){return `<div class="top">${back?`<button class="back" oncl
 function applyLangChrome(){
   document.title=t("appTitle");
   const i=document.getElementById("intro"),v=document.getElementById("ver");
-  if(i)i.textContent=t("intro");if(v)v.textContent=t("version","23-10-2026 12:28");
+  if(i)i.textContent=t("intro");if(v)v.textContent=t("version","25-10-2026 17:39");
 }
 
 /* ---------- Αρχική ---------- */
@@ -2670,6 +2671,7 @@ function home(){
   if(S.cur!==undefined&&S.cur!==nx&&LESSONS[S.cur]) h+=`<button class="big sec" onclick="lesson(${S.cur})">${t("continueN",S.cur+1)}</button>`;
   const m=S.mist.length, sp=s=>{const k=s.search(/\s/);return k>0?`<span class="ti">${s.slice(0,k)}</span><span>${s.slice(k+1)}</span>`:s};
   h+=`<div class="grid2"><button class="tile" onclick="daily()">${sp(t("daily"))}</button><a class="tile" href="lexilogio.html" style="background:#0b7a6b;border-color:#0b7a6b;color:#fff;box-shadow:0 3px 0 #075247">${sp(t("vocabBtn"))}</a>`;
+  h+=`<a class="tile full" href="arxarios.html" style="background:#2e8b3e;border-color:#2e8b3e;color:#fff;box-shadow:0 3px 0 #1d5e28">${(NOVICE[getLang()]||NOVICE.el)}</a>`;
   if(m) h+=`<button class="tile full" onclick="review()">${sp(t("reviewMist",m))}</button>`;
   h+=`</div>`;
   h+=`<form class="jump" novalidate onsubmit="jumpTo();return false"><label for="jn">${t("goTo")}</label><input id="jn" type="number" inputmode="numeric" min="1" max="${LESSONS.length}" placeholder="1–${LESSONS.length}"><button type="submit">${t("goBtn")}</button></form>`;
