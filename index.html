@@ -26,7 +26,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<!-- Εκδοση: 13-10-2026 · (c) Christos S Magides · cyp11111@gmail.com · All rights reserved -->
+<!-- Εκδοση: 9-11-2026 · (c) Christos S Magides · cyp11111@gmail.com · All rights reserved -->
 <style>
 :root{
   --bg:#fff8ee; --card:#ffffff; --ink:#1d2433; --soft:#55607a;
@@ -63,6 +63,17 @@ button{font-family:inherit;font-size:1em;cursor:pointer;border:none;-webkit-tap-
 .tag{display:inline-block;padding:4px 12px;border-radius:20px;color:#fff;font-weight:700;font-size:.8em}
 .rule{font-size:1.02em}
 .rule b{color:var(--blue)}
+.deepbtn{display:block;width:100%;margin-top:16px;padding:16px;border-radius:18px;font-weight:800;font-size:1.05em;background:#7b3fc4;color:#fff;box-shadow:0 4px 0 #4e2483}
+.deepbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #4e2483}
+.deep{margin-top:14px;border-top:3px dashed #d9c8f0;padding-top:6px}
+.deep h3{font-size:1em;margin:16px 0 6px;color:#7b3fc4}
+.deep .box{border-radius:16px;padding:12px 14px;line-height:1.55}
+.deep .why{background:#f3ecfc}.deep .gr{background:#e8f0fc}.deep .warn{background:#fff3d6;color:#5a3d00}.deep .mem{background:#e3f7e9;color:#0e5a28}
+.deep .dx{display:flex;align-items:center;gap:10px;background:#f7f7fb;border-radius:14px;padding:10px 12px;margin:8px 0}
+.deep .dx .tx{flex:1}.deep .dx .en{font-weight:700}.deep .dx .el{color:var(--soft);font-size:.9em}
+.deep .try{background:#fff;border:3px solid #7b3fc4;border-radius:16px;padding:14px}
+.deep .ans{margin-top:10px;background:var(--greenbg);color:#0e5a28;border-radius:12px;padding:10px 12px;font-weight:700}
+.deep .showans{margin-top:10px;background:#7b3fc4;color:#fff;border-radius:14px;padding:10px 16px;font-weight:800}
 .ex{display:flex;align-items:center;gap:10px;border-radius:14px;padding:10px 12px;margin:8px 0;font-weight:600}
 .ex.ok{background:var(--greenbg);color:#0e5a28}
 .ex.no{background:var(--redbg);color:#8e1b1b;text-decoration:line-through;text-decoration-thickness:2px}
@@ -180,7 +191,7 @@ details.lvl summary .st{margin-inline-start:auto;white-space:nowrap}
 <div class="wrap" id="app"></div>
 <div class="wrap" style="padding-top:0">
   <div class="foot"><p id="intro" style="margin:0 0 12px">Δωρεάν μαθήματα αγγλικής γραμματικής για Έλληνες: 120 μαθήματα στα ελληνικά, ασκήσεις με διόρθωση, ήχος και 1.000 λέξεις λεξιλόγιο. Χωρίς εγγραφή, χωρίς διαφημίσεις.</p>
-    <span id="ver">Αγγλικά σε 5 λεπτά · Έκδοση 25-10-2026 17:39</span><br>
+    <span id="ver">Αγγλικά σε 5 λεπτά · Έκδοση 9-11-2026 20:15</span><br>
     © Christos S Magides · <a href="mailto:cyp11111@gmail.com" style="color:inherit">cyp11111@gmail.com</a> · All rights reserved
   </div>
 </div>
@@ -489,6 +500,222 @@ q:[["___ you help me, please?","Could","Do","Are","Ευγενική παράκλ
 ["___ me, where is the station?","Excuse","Sorry","Please","Για να ρωτήσουμε: Excuse me."],
 ["Δεν άκουσα. Μπορείτε να το επαναλάβετε;","Sorry, could you repeat that, please?","Sorry, repeat.","Say again me, please.","Could you repeat that, please?"]]}
 ];
+
+/* Βαθιές εξηγήσεις «Δεν το κατάλαβα, εξήγησέ μου» — 9-11-2026 — (c) Christos S Magides
+   w = Γιατί έτσι; · g = Σύγκριση με τα ελληνικά · x = παραδείγματα [αγγλικά, ελληνικά]
+   p = Προσοχή · m = Κόλπο μνήμης · q = Δοκιμάστε [ερώτηση, απάντηση] */
+const DEEP = {
+0:{w:"Παλιά, τα αγγλικά είχαν ξεχωριστή κατάληξη για κάθε πρόσωπο, όπως τα ελληνικά. Με τους αιώνες τις έχασαν σχεδόν όλες. Έμεινε <b>μόνο μία</b>: αυτή του τρίτου προσώπου στον ενικό. Στην παλιά Βίβλο τη βλέπουμε ακόμη ως <b>-eth</b> (he loveth), που αργότερα έγινε <b>-s</b> (he loves).",
+g:"Ελληνικά: παίζ<b>ω</b>, παίζ<b>εις</b>, παίζ<b>ει</b>, παίζ<b>ουμε</b>, παίζ<b>ετε</b>, παίζ<b>ουν</b> → έξι καταλήξεις.<br>Αγγλικά: play, play, play<b>s</b>, play, play, play → μία μόνο.<br>Το <b>they</b> είναι πληθυντικός (αυτοί), γι' αυτό <b>δεν</b> παίρνει -s.",
+x:[["My mother cooks every day.","Η μητέρα μου μαγειρεύει κάθε μέρα."],["The bus leaves at ten.","Το λεωφορείο φεύγει στις δέκα."],["My children live in London.","Τα παιδιά μου μένουν στο Λονδίνο."],["She studies English.","Εκείνη μελετά αγγλικά."]],
+p:"<b>My wife and I</b> = we → χωρίς -s: My wife and I <b>live</b> here.<br><b>Everybody, the family</b> = ένα σύνολο → με -s: Everybody <b>knows</b>.<br>Ορθογραφία: study → stud<b>ies</b>, αλλά play → play<b>s</b>.",
+m:"<b>Ένα -s αρκεί!</b> Ή στο ουσιαστικό ή στο ρήμα:<br>The dog bark<b>s</b>. (ένας σκύλος) · The dog<b>s</b> bark. (πολλοί σκύλοι)",
+q:["The children ___ (play) in the garden.","play — children = they, άρα χωρίς -s."]},
+
+1:{w:"Τα αγγλικά χρειάζονται ένα <b>βοηθητικό</b> ρήμα για να κάνουν ερώτηση ή άρνηση. Αυτό το βοηθητικό (do / does) «κουβαλάει» το πρόσωπο και τον χρόνο, άρα το κύριο ρήμα μένει γυμνό. Στην εποχή του Σαίξπηρ έλεγαν ακόμη «Know you him?», αλλά σιγά σιγά επικράτησε το «Do you know him?».",
+g:"Στα ελληνικά αλλάζουμε μόνο τον τόνο της φωνής: «Μιλάει ελληνικά.» → «Μιλάει ελληνικά;»<br>Στα αγγλικά πρέπει να προσθέσουμε λέξη: She speaks Greek. → <b>Does</b> she speak Greek?<br>Το ελληνικό «δεν» γίνεται <b>don't / doesn't</b>.",
+x:[["Do you like fish?","Σου αρέσει το ψάρι;"],["He doesn't drive.","Δεν οδηγεί."],["Does it work?","Δουλεύει;"],["We don't know.","Δεν ξέρουμε."]],
+p:"Το -s εμφανίζεται <b>μία φορά</b>: Does she like ✅ — Does she likes ❌.<br>Με το <b>be</b> και το <b>can</b> δεν βάζουμε do: <b>Is</b> she ready? <b>Can</b> you swim? (όχι Do you can)",
+m:"<b>Το -s πηδάει στο does.</b> She likes → She does<b>n't</b> like → Does she like?",
+q:["___ your sister work in a bank?","Does — your sister = she."]},
+
+2:{w:"Τα αγγλικά έχουν <b>δύο</b> ενεστώτες: έναν για όσα κάνουμε συνήθως ή ισχύουν πάντα, κι έναν για όσα γίνονται <b>τώρα</b> ή για λίγο καιρό. Τα ελληνικά έχουν έναν μόνο και αφήνουν τα συμφραζόμενα να δείξουν τι εννοούμε.",
+g:"«Διαβάζω» μπορεί να σημαίνει:<br>I <b>read</b> every evening. (συνήθεια)<br>I <b>am reading</b> now. (αυτή τη στιγμή)<br>Στα αγγλικά πρέπει να διαλέξουμε.",
+x:[["She is cooking right now.","Μαγειρεύει αυτή τη στιγμή."],["She cooks every Sunday.","Μαγειρεύει κάθε Κυριακή."],["I am staying with my son this week.","Μένω με τον γιο μου αυτή την εβδομάδα."],["Water boils at 100 degrees.","Το νερό βράζει στους 100 βαθμούς."]],
+p:"Μην ξεχνάτε το am / is / are: I <b>am</b> reading ✅ — I reading ❌.<br>Ρήματα σκέψης και συναισθήματος δεν παίρνουν -ing: know, like, love, want, need, understand, believe, remember.<br>Ορθογραφία: write → writing, sit → sitting.",
+m:"Ο απλός ενεστώτας είναι <b>φωτογραφία</b> της ζωής σας. Το -ing είναι <b>βίντεο</b> αυτής της στιγμής.",
+q:["Be quiet! The baby ___ (sleep).","is sleeping — γίνεται τώρα."]},
+
+3:{w:"Τα αγγλικά βλέπουν την ηλικία, την πείνα, το κρύο, τον φόβο ως <b>κατάσταση</b> στην οποία βρισκόμαστε, όχι ως κάτι που κατέχουμε. Γι' αυτό λένε «είμαι πεινασμένος», «είμαι 72», «είμαι σωστός».",
+g:"έχω 72 χρόνια → I <b>am</b> 72<br>έχω δίκιο → I <b>am</b> right · έχω άδικο → I <b>am</b> wrong<br>πεινάω → I <b>am</b> hungry · διψάω → I <b>am</b> thirsty<br>κρυώνω → I <b>am</b> cold · κάνει ζέστη → It <b>is</b> hot<br>βιάζομαι → I <b>am</b> in a hurry",
+x:[["I am very tired today.","Είμαι πολύ κουρασμένος σήμερα."],["Are you hungry?","Πεινάς;"],["It is windy outside.","Έχει αέρα έξω."]],
+p:"«I have 72 years» ακούγεται σαν να έχετε 72 χρόνια στην τσέπη!<br><b>I am cold</b> = κρυώνω · <b>I have a cold</b> = έχω κρυολόγημα.",
+m:"<b>Πώς είμαι;</b> → be. <b>Τι κρατώ στα χέρια μου;</b> → have.",
+q:["My grandson ___ five years old.","is"]},
+
+4:{w:"Το a και το an προέρχονται και τα δύο από την παλιά λέξη για το «ένα». Πριν από σύμφωνο το -n έπεσε, για να λέγεται πιο εύκολα. Πριν από φωνήεν κρατήθηκε, γιατί δύο φωνήεντα μαζί (a apple) «σκοντάφτουν».",
+g:"Τα ελληνικά έχουν ένας / μία / ένα, ανάλογα με το γένος.<br>Τα αγγλικά δεν κοιτάνε το γένος, αλλά τον <b>ήχο</b> της επόμενης λέξης.<br>Στα επαγγέλματα τα ελληνικά δεν βάζουν άρθρο: «Είμαι δάσκαλος» → I am <b>a</b> teacher.",
+x:[["an egg, an old man","ένα αυγό, ένας γέρος"],["a big apple","ένα μεγάλο μήλο"],["an honest man","ένας τίμιος άνθρωπος"],["a European city","μια ευρωπαϊκή πόλη"]],
+p:"Κοιτάμε τον <b>ήχο</b>, όχι το γράμμα: an <b>h</b>our (δεν ακούγεται), a <b>u</b>niversity («γιου»).<br>Μετράει η <b>αμέσως επόμενη</b> λέξη: an apple, αλλά a <b>b</b>ig apple.<br>Όχι a στον πληθυντικό ή στα αμέτρητα: a bread ❌.",
+m:"<b>Άκου, μην κοιτάς:</b> φωνήεν στο αυτί → an.",
+q:["I waited for ___ hour.","an — το h δεν ακούγεται."]},
+
+5:{w:"Το <b>the</b> σημαίνει «αυτό το συγκεκριμένο, που ξέρουμε και οι δύο». Όταν μιλάμε για κάτι <b>γενικά</b> (τη ζωή, τον καφέ, τη μουσική), δεν υπάρχει κάτι συγκεκριμένο να δείξουμε, άρα δεν βάζουμε the.",
+g:"Ο καφές είναι νόστιμος (γενικά) → <b>Coffee</b> is tasty.<br>Ο καφές που έφτιαξες είναι νόστιμος → <b>The</b> coffee you made is tasty.<br>Η Κύπρος → Cyprus · Τα αγγλικά → English · Το πρωινό → breakfast",
+x:[["Music helps me relax.","Η μουσική με βοηθά να χαλαρώνω."],["The music at the wedding was beautiful.","Η μουσική στον γάμο ήταν όμορφη."],["Children need love.","Τα παιδιά χρειάζονται αγάπη."]],
+p:"Μην μεταφράζετε αυτόματα το ελληνικό άρθρο.<br>Παίρνουν the: <b>the</b> sun, <b>the</b> sea, <b>the</b> USA, <b>the</b> UK, <b>the</b> Mediterranean (θάλασσες και ποτάμια).",
+m:"<b>Μπορείτε να δείξετε με το δάχτυλο ποιο;</b> → the. Μιλάτε γενικά; → τίποτα.",
+q:["___ honey is good for you. (γενικά)","Honey — γενικά, χωρίς the."]},
+
+6:{w:"Η κατάληξη -ed έρχεται από μια πολύ παλιά γερμανική κατάληξη (-de / -te), που υπάρχει και σήμερα στα γερμανικά. Το καλό νέο: είναι <b>ίδια για όλα τα πρόσωπα</b>.",
+g:"Ελληνικά: δούλεψ<b>α</b>, δούλεψ<b>ες</b>, δούλεψ<b>ε</b>, δουλέψ<b>αμε</b>... → έξι μορφές.<br>Αγγλικά: I work<b>ed</b>, you work<b>ed</b>, he work<b>ed</b>... → μία μόνο!",
+x:[["I watched the news last night.","Είδα τις ειδήσεις χθες βράδυ."],["We lived in Athens in 1980.","Μέναμε στην Αθήνα το 1980."],["She called me yesterday.","Μου τηλεφώνησε χθες."]],
+p:"<b>Προφορά</b> — τρεις ήχοι:<br>worked («γουόρκτ»), lived («λιβντ»): χωρίς επιπλέον συλλαβή.<br>Μόνο μετά από <b>t</b> ή <b>d</b> ακούγεται «-ιντ»: want<b>ed</b>, need<b>ed</b>.<br>Ορθογραφία: stop → sto<b>pp</b>ed, study → stud<b>ied</b>, play → play<b>ed</b>.",
+m:"<b>Μία κατάληξη για όλους.</b> Και «-ιντ» μόνο μετά από t ή d.",
+q:["I ___ (visit) my brother last Sunday.","visited"]},
+
+7:{w:"Τα ανώμαλα ρήματα είναι τα <b>πιο παλιά και πιο συχνά</b> ρήματα της γλώσσας. Όσο πιο συχνά λέγεται μια λέξη, τόσο πιο καλά κρατά την παλιά της μορφή. Το ίδιο συμβαίνει και στα ελληνικά!",
+g:"Και τα ελληνικά έχουν ανώμαλα: τρώω → <b>έφαγα</b>, λέω → <b>είπα</b>, βλέπω → <b>είδα</b>, πάω → <b>πήγα</b>.<br>Κανείς δεν λέει «τρώησα». Έτσι κι εδώ: κανείς δεν λέει «goed».",
+x:[["I bought a new phone.","Αγόρασα καινούργιο κινητό."],["She took the bus.","Πήρε το λεωφορείο."],["We were at home.","Ήμασταν στο σπίτι."]],
+p:"<b>was</b> για I / he / she / it — <b>were</b> για you / we / they.<br>Η ανώμαλη μορφή μπαίνει <b>μόνο</b> στην καταφατική πρόταση. Με did το ρήμα γυρίζει πίσω: Did you <b>go</b>? (επόμενο μάθημα)",
+m:"Μάθετέ τα <b>σε ομάδες που ακούγονται ίδια</b>:<br>buy → bought, bring → brought, think → thought, teach → taught<br>sing → sang, drink → drank, swim → swam<br>put → put, cut → cut, cost → cost (δεν αλλάζουν)",
+q:["We ___ (eat) fish yesterday.","ate"]},
+
+8:{w:"Είναι ο ίδιος μηχανισμός με το do / does, αλλά στο παρελθόν: το βοηθητικό <b>did</b> κουβαλάει τον χρόνο, άρα το ρήμα δεν χρειάζεται να δείξει ότι είναι παρελθόν.",
+g:"«Πήγες;» → <b>Did</b> you go?<br>«Δεν τον είδα.» → I <b>didn't</b> see him.<br>Στα ελληνικά το ρήμα αλλάζει (πήγες). Στα αγγλικά αλλάζει μόνο το did.",
+x:[["Did you sleep well?","Κοιμήθηκες καλά;"],["I didn't understand.","Δεν κατάλαβα."],["What did she say?","Τι είπε;"]],
+p:"Did you <b>went</b> ❌ · I didn't <b>saw</b> ❌<br>Χωρίς did: με was / were (Were you there?) και με could (Could you see?).",
+m:"<b>Ένα παρελθόν αρκεί:</b> ή did ή went, ποτέ και τα δύο μαζί.",
+q:["Did she ___ (buy) bread?","buy"]},
+
+9:{w:"Τα αγγλικά ξεχωρίζουν αυστηρά δύο είδη παρελθόντος:<br>• κάτι που <b>τελείωσε</b> σε συγκεκριμένο χρόνο (Αόριστος),<br>• κάτι που <b>συνδέεται με το τώρα</b> (Present Perfect).<br>Το Present Perfect είναι σαν <b>γέφυρα</b> από το παρελθόν ως σήμερα.",
+g:"Στα ελληνικά λέμε «Μένω εδώ 20 χρόνια» με ενεστώτα.<br>Στα αγγλικά: I <b>have lived</b> here for 20 years.<br>«Ξέρω τον Γιώργο από το 1980» → I <b>have known</b> George since 1980.<br>«Έχω πάει στο Λονδίνο» → I <b>have been</b> to London.",
+x:[["Have you ever been to Italy?","Έχεις πάει ποτέ στην Ιταλία;"],["I have just eaten.","Μόλις έφαγα."],["She has worked here since May.","Δουλεύει εδώ από τον Μάιο."]],
+p:"<b>Όχι</b> με λέξεις τελειωμένου χρόνου: yesterday, last year, in 1990, ago → εκεί Αόριστος.<br>I have seen him yesterday ❌ → I <b>saw</b> him yesterday ✅<br>He has <b>gone</b> to London = είναι ακόμα εκεί · He has <b>been</b> to London = πήγε και γύρισε.",
+m:"<b>Αρχίζει πίσω και φτάνει ως σήμερα</b> → have + 3η μορφή.",
+q:["I ___ (know) her for ten years.","have known"]},
+
+10:{w:"Τρεις λέξεις, τρεις ερωτήσεις:<br><b>for</b> απαντά στο «πόση ώρα;» (ένα μήκος χρόνου),<br><b>since</b> απαντά στο «από πότε;» (μια αφετηρία),<br><b>ago</b> μετρά «πόσο πίσω από σήμερα».",
+g:"«εδώ και 3 χρόνια» → <b>for</b> 3 years<br>«από το 2020» → <b>since</b> 2020<br>«πριν από 2 χρόνια» → 2 years <b>ago</b><br>Το ελληνικό «εδώ και» καλύπτει και το for και το since.",
+x:[["I have waited for an hour.","Περιμένω μία ώρα."],["She has been ill since Friday.","Είναι άρρωστη από την Παρασκευή."],["They married forty years ago.","Παντρεύτηκαν πριν από σαράντα χρόνια."]],
+p:"Το ago μπαίνει <b>μετά</b>: two years ago (όχι ago two years).<br>Με ago πάντα Αόριστος: I <b>met</b> him ten years ago.",
+m:"<b>for</b> = χάρακας (πόσο μακρύ) · <b>since</b> = σημαία στην αφετηρία · <b>ago</b> = κοιτάω πίσω από τον ώμο.",
+q:["I have lived here ___ 2015.","since"]},
+
+11:{w:"Το <b>going to</b> ξεκίνησε κυριολεκτικά: «πηγαίνω (είμαι καθ' οδόν) να κάνω κάτι». Γι' αυτό δείχνει κάτι που είναι <b>ήδη στον δρόμο</b>: σχέδιο ή κάτι που το βλέπουμε να έρχεται.<br>Το <b>will</b> δείχνει απόφαση της στιγμής, υπόσχεση ή γνώμη για το μέλλον.",
+g:"Τα ελληνικά έχουν ένα «θα» για όλα.<br>«Θα σε βοηθήσω!» (το αποφασίζω τώρα) → I<b>'ll</b> help you.<br>«Θα πάω στο Λονδίνο τον Μάιο» (το έχω κανονίσει) → I'm <b>going to</b> go to London in May.",
+x:[["Look at those clouds! It's going to rain.","Δες αυτά τα σύννεφα! Θα βρέξει."],["I think she will like it.","Νομίζω ότι θα της αρέσει."],["I promise I will call you.","Υπόσχομαι ότι θα σου τηλεφωνήσω."]],
+p:"Μετά το will <b>ποτέ</b> to: I will to go ❌.<br>Μην ξεχνάτε το am / is / are πριν από το going to: I <b>am</b> going to ✅.",
+m:"<b>Το αποφασίσατε πριν;</b> → going to. <b>Το αποφασίζετε τώρα;</b> → will.",
+q:["The phone is ringing. — I ___ answer it!","'ll (will) — απόφαση εκείνη τη στιγμή."]},
+
+12:{w:"Τα αγγλικά βλέπουν μερικά πράγματα σαν <b>μάζα</b> που δεν χωρίζεται σε κομμάτια, όπως το νερό ή η άμμος. Έτσι βλέπουν και τις πληροφορίες, τις συμβουλές, τα έπιπλα, τα νέα. Γι' αυτό δεν παίρνουν -s ούτε a.",
+g:"Στα ελληνικά τα μετράμε: «πολλές πληροφορίες», «δύο συμβουλές», «τα έπιπλα».<br>Στα αγγλικά: a lot of <b>information</b>, some <b>advice</b>, the <b>furniture</b>.<br>«Τα νέα είναι καλά» → The news <b>is</b> good (ενικός!).",
+x:[["He gave me good advice.","Μου έδωσε καλές συμβουλές."],["My hair is grey.","Τα μαλλιά μου είναι γκρίζα."],["Many people are waiting.","Πολλοί άνθρωποι περιμένουν."]],
+p:"Για να τα μετρήσουμε: <b>a piece of</b> advice, two <b>pieces of</b> furniture (μάθημα 50).<br><b>hair</b> = τα μαλλιά (ενικός) · <b>a hair</b> = μία τρίχα.<br>Το money είναι ενικός: The money <b>is</b> on the table.",
+m:"Οι «ύποπτες» λέξεις: <b>information, advice, news, furniture, luggage, money, hair, bread, homework</b>. Ποτέ -s!",
+q:["Can you give me some ___? (συμβουλές)","advice"]},
+
+13:{w:"Τα αγγλικά ξεχωρίζουν αν κάτι <b>μετριέται σε κομμάτια</b> (φίλοι, βιβλία) ή <b>ζυγίζεται ως ποσότητα</b> (χρόνος, νερό, χρήματα). Τα ελληνικά αλλάζουν το «πολύς» ανάλογα με το γένος, τα αγγλικά ανάλογα με αυτό.",
+g:"πολλοί φίλοι → <b>many</b> friends<br>πολύς χρόνος → <b>much</b> time<br>Και τα δύο → <b>a lot of</b> friends, <b>a lot of</b> time",
+x:[["How many eggs do we need?","Πόσα αυγά χρειαζόμαστε;"],["I don't have much time.","Δεν έχω πολύ χρόνο."],["She has a lot of friends.","Έχει πολλούς φίλους."]],
+p:"Σε καταφατική πρόταση το much ακούγεται πολύ επίσημο: I have much money → καλύτερα I have <b>a lot of</b> money.<br>Με ρήματα λέμε <b>very much</b>: I like it very much.",
+m:"<b>many</b> = μετράτε με τα δάχτυλα. <b>much</b> = μετράτε με τη ζυγαριά.",
+q:["How ___ sugar do you take?","much"]},
+
+14:{w:"Το <b>some</b> λέει «υπάρχει κάποια ποσότητα». Το <b>any</b> λέει «οποιαδήποτε ποσότητα, ακόμα και καθόλου». Στην ερώτηση και στην άρνηση δεν ξέρουμε αν υπάρχει, γι' αυτό ταιριάζει το any.",
+g:"Τα ελληνικά συνήθως δεν βάζουν τίποτα:<br>«Έχεις ψωμί;» → Do you have <b>any</b> bread?<br>«Θέλω νερό.» → I want <b>some</b> water.<br>«Δεν έχω λεφτά.» → I don't have <b>any</b> money.",
+x:[["There are some apples on the table.","Έχει μερικά μήλα στο τραπέζι."],["Have you got any questions?","Έχετε ερωτήσεις;"],["Would you like some cake?","Θα θέλατε λίγο κέικ;"]],
+p:"Σε προσφορά ή παράκληση λέμε <b>some</b>, γιατί περιμένουμε «ναι»: Can I have some water?<br>Το any σε καταφατική = «οποιοδήποτε»: Take <b>any</b> chair. (Πάρε όποια καρέκλα θέλεις.)",
+m:"<b>some</b> = «υπάρχει, λίγο». <b>any</b> = «καθόλου ή οτιδήποτε».",
+q:["There isn't ___ milk in the fridge.","any"]},
+
+15:{w:"Σκεφτείτε μια <b>πυραμίδα</b> από το μεγάλο στο μικρό:<br><b>in</b> για μεγάλα διαστήματα (μήνας, χρόνος, εποχή),<br><b>on</b> για μία μέρα,<br><b>at</b> για ένα ακριβές σημείο (μια ώρα).",
+g:"Τα ελληνικά λένε σχεδόν παντού «σε»: <b>στις</b> 8, <b>τη</b> Δευτέρα, <b>τον</b> Μάιο, <b>το</b> 1954.<br>Τα αγγλικά διαλέγουν ανάλογα με το μέγεθος του χρόνου.",
+x:[["The shop opens at nine.","Το μαγαζί ανοίγει στις εννιά."],["I was born in 1954.","Γεννήθηκα το 1954."],["We meet on Fridays.","Συναντιόμαστε τις Παρασκευές."]],
+p:"<b>at</b> night, αλλά <b>in</b> the morning / afternoon / evening.<br><b>at</b> Christmas (οι γιορτές), αλλά <b>on</b> Christmas Day (η μέρα).<br>Καμία πρόθεση με next, last, this, every: next Monday (όχι on next Monday).",
+m:"<b>in</b> = μεγάλο κουτί (μήνας, χρόνος) · <b>on</b> = μια σελίδα του ημερολογίου · <b>at</b> = η μία κουκκίδα του ρολογιού.",
+q:["My birthday is ___ June.","in"]},
+
+16:{w:"<b>in</b> = μέσα σε χώρο με όρια (τρεις διαστάσεις).<br><b>on</b> = πάνω σε επιφάνεια ή γραμμή.<br><b>at</b> = σε ένα σημείο, εκεί που γίνεται μια δραστηριότητα.",
+g:"Τα ελληνικά λένε «στο» για όλα:<br><b>στο</b> σπίτι → at home · <b>στο</b> τραπέζι → on the table · <b>στο</b> αυτοκίνητο → in the car.",
+x:[["The keys are in my bag.","Τα κλειδιά είναι στην τσάντα μου."],["He is at the doctor's.","Είναι στον γιατρό."],["We live on the second floor.","Μένουμε στον δεύτερο όροφο."]],
+p:"<b>in</b> the car / taxi, αλλά <b>on</b> the bus / train / plane (μπορείτε να περπατήσετε μέσα).<br>Φτάνω: arrive <b>in</b> a city, arrive <b>at</b> the airport (ποτέ arrive to).",
+m:"<b>in</b> = κουτί · <b>on</b> = τραπέζι · <b>at</b> = κουκκίδα στον χάρτη.",
+q:["The picture is ___ the wall.","on"]},
+
+17:{w:"Το κτητικό δείχνει <b>τίνος είναι</b> κάτι. Γι' αυτό κοιτάμε τον <b>ιδιοκτήτη</b>, όχι το πράγμα. Καλό νέο: ακριβώς όπως το ελληνικό «του / της»!",
+g:"η γυναίκα <b>του</b> → <b>his</b> wife<br>ο άντρας <b>της</b> → <b>her</b> husband<br>τα παιδιά <b>τους</b> → <b>their</b> children<br>η ουρά <b>του</b> (σκύλου) → <b>its</b> tail",
+x:[["John loves his daughter.","Ο Γιάννης αγαπά την κόρη του."],["Maria lost her keys.","Η Μαρία έχασε τα κλειδιά της."],["The tree lost its leaves.","Το δέντρο έχασε τα φύλλα του."]],
+p:"<b>its</b> = του (κτητικό) · <b>it's</b> = it is.<br><b>their</b> = τους · <b>there</b> = εκεί · <b>they're</b> = they are.",
+m:"Ρωτήστε <b>«Τίνος είναι;»</b> — η απάντηση αποφασίζει.",
+q:["Maria loves ___ husband.","her"]},
+
+18:{w:"Τα αγγλικά έχασαν τις πτώσεις στα ουσιαστικά, αλλά τις <b>κράτησαν στις αντωνυμίες</b>. Το I / me είναι σαν το ελληνικό εγώ / εμένα.",
+g:"<b>εγώ</b> → I · <b>εμένα / με</b> → me<br><b>αυτός</b> → he · <b>αυτόν / τον</b> → him<br><b>εμείς</b> → we · <b>εμάς / μας</b> → us<br><b>αυτοί</b> → they · <b>αυτούς / τους</b> → them",
+x:[["She called me.","Μου τηλεφώνησε."],["We saw them at church.","Τους είδαμε στην εκκλησία."],["This is for him.","Αυτό είναι για εκείνον."]],
+p:"Σωστό: <b>My wife and I</b> went. (Το «Me and my wife» ακούγεται στην καθομιλουμένη, όχι στα σωστά αγγλικά.)<br>Μετά από πρόθεση πάντα me: between you and <b>me</b>.",
+m:"<b>Βγάλτε τον άλλον</b> από την πρόταση:<br>«My wife and (I / me) went» → «I went» → <b>I</b>.<br>«He invited my wife and (I / me)» → «He invited me» → <b>me</b>.",
+q:["Can you help ___? (εμάς)","us"]},
+
+19:{w:"Στα αγγλικά το επίθετο είναι <b>ακίνητο</b>: δεν έχει γένος, αριθμό ή πτώση, και κάθεται πάντα μπροστά από το ουσιαστικό. Αυτή είναι η παλιά γερμανική σειρά.",
+g:"καλός, καλή, καλό, καλοί, καλές, καλά → <b>good</b> για όλα!<br>Στα ελληνικά μπορούμε (σπάνια) να πούμε «ένα αυτοκίνητο κόκκινο». Στα αγγλικά ποτέ: a <b>red</b> car.",
+x:[["They have two big dogs.","Έχουν δύο μεγάλα σκυλιά."],["She is a kind woman.","Είναι καλοσυνάτη γυναίκα."],["Old houses need care.","Τα παλιά σπίτια θέλουν φροντίδα."]],
+p:"Μετά από <b>be, look, feel, seem</b> το επίθετο μπαίνει μετά: The car <b>is red</b>. She <b>looks tired</b>.<br>Ποτέ -s στο επίθετο: olds houses ❌.",
+m:"<b>Το επίθετο είναι ακίνητο:</b> πάντα πριν, πάντα ίδιο.",
+q:["They have two ___. (μεγάλα σκυλιά)","big dogs"]},
+
+20:{w:"Οι μικρές λέξεις (συνήθως παλιές αγγλικές) παίρνουν κατάληξη -er. Οι μεγάλες (συχνά από τα λατινικά και τα γαλλικά) θα γίνονταν δύσκολες στην προφορά, γι' αυτό παίρνουν <b>more</b> μπροστά.",
+g:"Τα ελληνικά έχουν και τους δύο τρόπους: «μεγαλ<b>ύτερος</b>» ή «<b>πιο</b> μεγάλος».<br>Τα αγγλικά διαλέγουν ανάλογα με το μήκος της λέξης.<br>Το ελληνικό «<b>από</b>» γίνεται <b>than</b>: μεγαλύτερος από εμένα → older <b>than</b> me.",
+x:[["Cyprus is smaller than Greece.","Η Κύπρος είναι μικρότερη από την Ελλάδα."],["This is the best coffee in town.","Αυτός είναι ο καλύτερος καφές στην πόλη."],["Health is more important than money.","Η υγεία είναι πιο σημαντική από τα χρήματα."]],
+p:"Ποτέ <b>from</b> στη σύγκριση: older from me ❌ → older <b>than</b> me ✅.<br>Ποτέ και τα δύο μαζί: more bigger ❌.<br>Ορθογραφία: big → bi<b>gg</b>er, nice → nic<b>er</b>, happy → happ<b>ier</b>.",
+m:"<b>Κοντή λέξη, κοντή κατάληξη (-er). Μακριά λέξη, more μπροστά.</b><br>Και: «από» → than.",
+q:["My brother is ___ (old) than me.","older"]},
+
+21:{w:"Το <b>good</b> περιγράφει <b>πρόσωπο ή πράγμα</b> (επίθετο). Το <b>well</b> περιγράφει <b>πώς</b> γίνεται μια πράξη (επίρρημα).",
+g:"Ακριβώς όπως στα ελληνικά!<br><b>καλός</b> → good: Είναι καλός μάγειρας → He is a <b>good</b> cook.<br><b>καλά</b> → well: Μαγειρεύει καλά → He cooks <b>well</b>.",
+x:[["She sings well.","Τραγουδάει καλά."],["Drive carefully!","Οδήγα προσεκτικά!"],["The soup smells good.","Η σούπα μυρίζει ωραία."]],
+p:"<b>I'm well</b> = είμαι καλά στην υγεία μου.<br>Χωρίς -ly: fast, hard, late. Προσοχή: <b>hardly</b> = σχεδόν καθόλου!",
+m:"<b>καλός → good · καλά → well.</b>",
+q:["He speaks English very ___.","well"]},
+
+22:{w:"Στα ελληνικά οι <b>καταλήξεις</b> δείχνουν ποιος κάνει τι, γι' αυτό η σειρά είναι ελεύθερη. Τα αγγλικά δεν έχουν σχεδόν καταλήξεις, άρα η <b>σειρά</b> κουβαλάει το νόημα:<br>The dog bit the man ≠ The man bit the dog.",
+g:"Στα ελληνικά: «Τον Γιάννη τον είδα χθες» ή «Χθες είδα τον Γιάννη» — και τα δύο σωστά.<br>Στα αγγλικά μόνο: I saw John yesterday.",
+x:[["I drink coffee every morning.","Πίνω καφέ κάθε πρωί."],["She speaks English very well.","Μιλάει αγγλικά πολύ καλά."],["We usually go to church on Sunday.","Συνήθως πηγαίνουμε στην εκκλησία την Κυριακή."]],
+p:"Ποτέ ανάμεσα στο ρήμα και στο αντικείμενο: I like very much music ❌ → I like music very much ✅.<br>Πρώτα ο τόπος, μετά ο χρόνος: I went <b>to London last year</b>.",
+m:"<b>Ποιος – Κάνει – Τι – Πώς – Πού – Πότε.</b>",
+q:["Βάλτε σε σειρά: yesterday / I / my friend / saw","I saw my friend yesterday."]},
+
+23:{w:"Κάθε αγγλική πρόταση χρειάζεται <b>υποκείμενο</b>. Όταν λέμε ότι κάτι υπάρχει, δεν έχουμε υποκείμενο, γι' αυτό τα αγγλικά βάζουν ένα «ψεύτικο» υποκείμενο: το <b>there</b>.",
+g:"Τα ελληνικά δεν χρειάζονται υποκείμενο: «Υπάρχει», «Έχει κόσμο».<br>«Έχει πολύ κόσμο» → <b>There are</b> a lot of people (όχι It has).<br>«Έχει φαρμακείο εδώ κοντά;» → <b>Is there</b> a pharmacy near here?",
+x:[["There is a problem.","Υπάρχει ένα πρόβλημα."],["There were many people at the wedding.","Είχε πολύ κόσμο στον γάμο."],["Is there any bread?","Έχει ψωμί;"]],
+p:"Το «έχει» με νόημα «υπάρχει» <b>ποτέ</b> it has.<br>Is ή are; Κοιτάμε το πρώτο ουσιαστικό: There <b>is</b> a book. There <b>are</b> two books.",
+m:"<b>«Έχει» = «υπάρχει»</b> → There is / There are.",
+q:["___ many tourists in summer.","There are"]},
+
+24:{w:"Αυτά τα ρήματα είναι πολύ παλιά και «ξεχωριστά»: <b>ποτέ</b> δεν παίρνουν -s, -ing ή to. Δουλεύουν σαν βοηθοί που ακουμπούν σε ένα γυμνό ρήμα.",
+g:"Στα ελληνικά λέμε «Μπορώ <b>να</b> κολυμπήσω». Το «να» μάς παρασύρει να πούμε «can to swim».<br>Στα αγγλικά το «να» <b>εξαφανίζεται</b>: I can swim.",
+x:[["You should drink more water.","Θα έπρεπε να πίνεις περισσότερο νερό."],["Can you help me?","Μπορείς να με βοηθήσεις;"],["She must rest.","Πρέπει να ξεκουραστεί."]],
+p:"Όχι do στην ερώτηση: Do you can? ❌ → Can you? ✅<br>Όχι -s: He cans ❌ → He can ✅.",
+m:"<b>Μετά από can, must, should, will: ούτε to, ούτε -s.</b> Το ελληνικό «να» φεύγει.",
+q:["You should ___ (see) a doctor.","see"]},
+
+25:{w:"Στα αγγλικά η ερώτηση φτιάχνεται με <b>αλλαγή σειράς</b>: το βοηθητικό ρήμα πηγαίνει μπροστά από το υποκείμενο. Στα ελληνικά αρκεί ο τόνος της φωνής.",
+g:"«Πού μένεις;» → Where <b>do</b> you live?<br>«Τι είπε;» → What <b>did</b> he say?<br>«Πότε έρχεται;» → When <b>is</b> she coming?",
+x:[["Why are you sad?","Γιατί είσαι λυπημένος;"],["How did you find it?","Πώς το βρήκες;"],["What time does the shop close?","Τι ώρα κλείνει το μαγαζί;"]],
+p:"Αν το <b>who / what</b> είναι αυτό που κάνει την πράξη, δεν βάζουμε do: <b>Who called?</b> (μάθημα 37).<br>Με το be δεν χρειάζεται do: Where <b>is</b> he?",
+m:"<b>Ερώτηση – Βοηθός – Ποιος – Ρήμα</b><br>Where – do – you – live?",
+q:["When ___ you arrive yesterday?","did"]},
+
+26:{w:"<b>tell</b> σημαίνει «λέω σε κάποιον» και θέλει <b>ακροατή</b>. <b>say</b> εστιάζει στα <b>λόγια</b>.<br><b>make</b> = φτιάχνω κάτι που πριν δεν υπήρχε. <b>do</b> = κάνω μια εργασία ή δραστηριότητα.",
+g:"Το ελληνικό «λέω» καλύπτει και τα δύο: tell / say.<br>Το ελληνικό «κάνω» καλύπτει και τα δύο: make / do.",
+x:[["She told me the truth.","Μου είπε την αλήθεια."],["He said goodbye.","Είπε αντίο."],["I made a cake.","Έφτιαξα ένα κέικ."],["I did my homework.","Έκανα τα μαθήματά μου."]],
+p:"say me ❌ → tell me ✅ ή say <b>to</b> me ✅.<br>Χωρίς ακροατή: tell a story, tell a joke, tell the truth.<br>make: the bed, money, a phone call · do: the dishes, business.",
+m:"<b>tell → πάντα σε κάποιον</b> (tell + ποιον).<br><b>make → αποτέλεσμα</b> που δεν υπήρχε πριν.",
+q:["Please ___ me your name.","tell"]},
+
+27:{w:"Ένας βοηθητικός (όχι απόλυτος) κανόνας:<br><b>to + ρήμα</b> κοιτάει <b>μπροστά</b>, σε κάτι που δεν έγινε ακόμα (θέλω, ελπίζω, αποφασίζω).<br><b>-ing</b> μιλά για την ίδια τη δραστηριότητα, που τη ζούμε ή την τελειώσαμε (απολαμβάνω, τελειώνω).",
+g:"Τα ελληνικά βάζουν «να» σε όλα:<br>«Μου αρέσει να διαβάζω» → I enjoy <b>reading</b>.<br>«Θέλω να πάω» → I want <b>to go</b>.",
+x:[["I decided to retire.","Αποφάσισα να βγω στη σύνταξη."],["She finished cooking.","Τελείωσε το μαγείρεμα."],["Thank you for helping me.","Ευχαριστώ που με βοήθησες."]],
+p:"Μετά από πρόθεση πάντα <b>-ing</b>: interested <b>in learning</b>, good <b>at cooking</b>, before <b>eating</b>.<br>Προσοχή: I look forward <b>to seeing</b> you (εδώ το to είναι πρόθεση!).",
+m:"<b>to = βέλος προς το μέλλον. -ing = το ζω ήδη.</b>",
+q:["I finished ___ (read) the book.","reading"]},
+
+28:{w:"Μετά το <b>if</b> και το <b>when</b>, ο ενεστώτας ήδη σημαίνει μέλλον, άρα το will είναι περιττό. Το will μπαίνει μόνο στο <b>αποτέλεσμα</b>.",
+g:"Ακριβώς όπως στα ελληνικά! Λέμε «Αν <b>βρέξει</b>, θα μείνω σπίτι», όχι «Αν θα βρέξει».<br>Μετά το «αν» δεν βάζουμε «θα» → μετά το <b>if</b> δεν βάζουμε <b>will</b>.",
+x:[["If you come, I will be happy.","Αν έρθεις, θα χαρώ."],["When I finish, I will call you.","Όταν τελειώσω, θα σου τηλεφωνήσω."],["If I were rich, I would travel.","Αν ήμουν πλούσιος, θα ταξίδευα."]],
+p:"If it will rain ❌ → If it <b>rains</b> ✅.<br>Στα φανταστικά: If I <b>were</b> you (were για όλα τα πρόσωπα).<br>Η σειρά αλλάζει: I'll stay home if it rains.",
+m:"<b>Όπως στα ελληνικά:</b> «αν» χωρίς «θα» → if χωρίς will.",
+q:["If you ___ (come) tomorrow, I'll cook.","come"]},
+
+29:{w:"Στα αγγλικά η ευγένεια φτιάχνεται με <b>απόσταση</b>: ερώτηση αντί για εντολή, και μορφές του παρελθόντος (could, would) που «μαλακώνουν» το αίτημα.",
+g:"Στα ελληνικά η προστακτική είναι φυσική: «Δώσε μου ένα νερό, σε παρακαλώ.»<br>Στα αγγλικά η προστακτική σε άγνωστο ακούγεται αγενής, ακόμα και με please.<br>→ <b>Could I have</b> some water, please?",
+x:[["Could you open the window, please?","Θα μπορούσατε να ανοίξετε το παράθυρο;"],["I'd like a coffee, please.","Θα ήθελα έναν καφέ, παρακαλώ."],["Would you like some tea?","Θα θέλατε λίγο τσάι;"]],
+p:"«I want...» στο μαγαζί ακούγεται σαν παιδί → <b>I'd like...</b><br>Όταν δεν ακούσαμε: <b>Sorry?</b> ή <b>Pardon?</b> (όχι What?).",
+m:"<b>Πιο μακριά = πιο ευγενικό:</b><br>Can you...? → Could you...? → Would you mind...?",
+q:["Πείτε ευγενικά: «Δώσε μου το αλάτι».","Could you pass me the salt, please?"]}
+};
+
 
 // Επιπλέον 9 ερωτήσεις για κάθε ένα από τα μαθήματα 1-30 (μπαίνουν ΜΕΤΑ τις 6 αρχικές)
 const EXTRA = [
@@ -2609,7 +2836,7 @@ function voiceList(){
 function setVoice(i){const v=enVoices()[i];if(!v)return;voice=v;VS.uri=v.voiceURI;vSave();voiceList();say(V_SAMPLE)}
 function setRate(r){VS.rate=r;vSave();voiceList();say(V_SAMPLE)}
 
-const UI_EL={
+const UI_EL={deepBtn:"🤔 Δεν το κατάλαβα, εξήγησέ μου",deepHide:"▲ Κλείσιμο εξήγησης",dWhy:"💡 Γιατί έτσι;",dGr:"🇬🇷 Σύγκριση με τα ελληνικά",dEx:"📝 Κι άλλα παραδείγματα",dWarn:"⚠️ Προσοχή",dMem:"🧠 Κόλπο μνήμης",dTry:"✏️ Δοκιμάστε μόνος σας",dShow:"👀 Δείξε την απάντηση",
 appTitle:"Αγγλικά σε 5 λεπτά",home:"← Αρχική",smaller:"Μικρότερα γράμματα",bigger:"Μεγαλύτερα γράμματα",listen:"Άκου",
 progress:"Πρόοδος: {0} από {1} μαθήματα",doneToday:"✅ Μπράβο! Το σημερινό μάθημα έγινε. Τα λέμε αύριο!",alsoNext:"Αν θέλετε, και το επόμενο:",todays:"Το σημερινό μάθημα",
 lessonN:"Μάθημα {0}",start:"▶ Ξεκίνα (5 λεπτά)",allDone:"🎉 Ολοκληρώσατε και τα {0} μαθήματα!",keepReviewing:"Συνεχίστε με επανάληψη κάθε μέρα.",
@@ -2654,7 +2881,7 @@ function topBar(back){return `<div class="top">${back?`<button class="back" oncl
 function applyLangChrome(){
   document.title=t("appTitle");
   const i=document.getElementById("intro"),v=document.getElementById("ver");
-  if(i)i.textContent=t("intro");if(v)v.textContent=t("version","25-10-2026 17:39");
+  if(i)i.textContent=t("intro");if(v)v.textContent=t("version","9-11-2026 20:15");
 }
 
 /* ---------- Αρχική ---------- */
@@ -2688,13 +2915,29 @@ function home(){
 
 function jumpTo(){const n=parseInt(document.getElementById("jn").value,10);if(n>=1&&n<=LESSONS.length)lesson(n-1);else toast(t("badNum",LESSONS.length))}
 
+/* ---------- Βαθιά εξήγηση ---------- */
+function hasDeep(i){return !PACK && typeof DEEP!=="undefined" && !!DEEP[i]}
+function deepBtn(i,id){if(!hasDeep(i))return "";return `<button class="deepbtn" id="db${id}" onclick="toggleDeep(${i},'${id}')">${t("deepBtn")}</button><div class="deep hidden" id="dd${id}"></div>`}
+function toggleDeep(i,id){
+  const box=document.getElementById("dd"+id),btn=document.getElementById("db"+id);
+  if(!box.classList.contains("hidden")){box.classList.add("hidden");btn.textContent=t("deepBtn");return}
+  const D=DEEP[i];let h="";
+  if(D.w)h+=`<h3>${t("dWhy")}</h3><div class="box why">${D.w}</div>`;
+  if(D.g)h+=`<h3>${t("dGr")}</h3><div class="box gr">${D.g}</div>`;
+  if(D.x){h+=`<h3>${t("dEx")}</h3>`;D.x.forEach(([en,el])=>{h+=`<div class="dx"><div class="tx"><div class="en">${esc(en)}</div><div class="el">${esc(el)}</div></div>${spkBtn(en)}</div>`})}
+  if(D.p)h+=`<h3>${t("dWarn")}</h3><div class="box warn">${D.p}</div>`;
+  if(D.m)h+=`<h3>${t("dMem")}</h3><div class="box mem">${D.m}</div>`;
+  if(D.q)h+=`<h3>${t("dTry")}</h3><div class="try"><div style="font-weight:700">${esc(D.q[0])}</div><button class="showans" onclick="this.nextElementSibling.classList.remove('hidden');this.remove()">${t("dShow")}</button><div class="ans hidden">✅ ${esc(D.q[1])}</div></div>`;
+  box.innerHTML=h;box.classList.remove("hidden");btn.textContent=t("deepHide");
+}
+
 /* ---------- Κανόνας ---------- */
 function lesson(i){
   window.scrollTo(0,0);
   const L=LESSONS[i];
   S.cur=i;save();
   let h=topBar(true);
-  h+=`<div class="card"><span class="tag" style="background:${col(i)}">${t("lessonN",i+1)}</span><h2 style="margin:10px 0 12px;line-height:1.3" dir="auto">${tr(L.t)}</h2><div class="rule">${tr(L.r).split("<br>").map(x=>`<div dir="auto">${x}</div>`).join("")}</div></div>`;
+  h+=`<div class="card"><span class="tag" style="background:${col(i)}">${t("lessonN",i+1)}</span><h2 style="margin:10px 0 12px;line-height:1.3" dir="auto">${tr(L.t)}</h2><div class="rule">${tr(L.r).split("<br>").map(x=>`<div dir="auto">${x}</div>`).join("")}</div>${deepBtn(i,"L")}</div>`;
   h+=`<div class="card"><div style="font-weight:800;margin-bottom:6px">${t("examples")}</div>`;
   L.e.forEach(([ok,x])=>{const s=tr(x);h+= ok?`<div class="ex ok"><span class="ic">✅</span><span class="tx" dir="auto">${esc(s)}</span>${spkBtn(x)}</div>`:`<div class="ex no"><span class="ic">❌</span><span class="tx" dir="auto">${esc(s)}</span></div>`});
   h+=`</div><button class="big go" onclick="startQuiz(${i})">${t("practice")}</button>`;
@@ -2760,7 +3003,7 @@ function answer(btn){
   const sent=fullSentence(q,q[1]);
   const shown=q[0].indexOf("___")<0?tr(q[1]):sent;
   const last=Q.pos===Q.items.length-1;
-  document.getElementById("fb").innerHTML=`<div class="fb ${ok?"g":"r"}"><span dir="auto">${ok?t("right"):t("wrong")} ${esc(tr(q[4]))}</span><div class="rowb">${spkBtn(sent)}<span dir="auto">${esc(shown)}</span></div>${!ok?`<details><summary>${t("rule")} · ${t("lessonN",it.li+1)}</summary><div class="rule">${tr(LESSONS[it.li].r).split("<br>").map(x=>`<div dir="auto">${x}</div>`).join("")}</div></details>`:""}</div><button class="big go" style="margin-top:16px" onclick="nextQ()">${last?t("finishBtn"):t("nextBtn")}</button>`;
+  document.getElementById("fb").innerHTML=`<div class="fb ${ok?"g":"r"}"><span dir="auto">${ok?t("right"):t("wrong")} ${esc(tr(q[4]))}</span><div class="rowb">${spkBtn(sent)}<span dir="auto">${esc(shown)}</span></div>${!ok?`<details><summary>${t("rule")} · ${t("lessonN",it.li+1)}</summary><div class="rule">${tr(LESSONS[it.li].r).split("<br>").map(x=>`<div dir="auto">${x}</div>`).join("")}</div>${deepBtn(it.li,"Q")}</details>`:""}</div><button class="big go" style="margin-top:16px" onclick="nextQ()">${last?t("finishBtn"):t("nextBtn")}</button>`;
   document.getElementById("fb").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 function nextQ(){Q.pos++;if(Q.pos<Q.items.length)showQ();else finish()}
