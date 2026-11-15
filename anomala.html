@@ -22,7 +22,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<!-- Εκδοση: 16-10-2026 09:57 · (c) Christos S Magides · cyp11111@gmail.com · All rights reserved -->
+<!-- Εκδοση: 16-10-2026 09:57 · (c) Christos S Magides · All rights reserved -->
 <style>
 :root{--bg:#f2faf7;--card:#fff;--ink:#1d2433;--soft:#55607a;--teal:#0b7a6b;--blue:#1f5fbf;--green:#178a3e;--greenbg:#e3f7e9;--red:#c62828;--redbg:#fde7e7;--gold:#f2a516;--line:#d5e6df;--fs:22px}
 *{box-sizing:border-box}
@@ -169,7 +169,7 @@ details.lvl summary .st{margin-inline-start:auto;white-space:nowrap}
 </head>
 <body>
 <div class="wrap" id="app"></div>
-<div class="wrap" style="padding-top:0"><div class="foot"><p style="margin:0 0 12px">Ανώμαλα ρήματα και εξαιρέσεις της αγγλικής γραμματικής, με ελληνική μετάφραση και ήχο.</p><span>Αγγλικά σε 5 λεπτά · Έκδοση 16-10-2026 09:57</span><br>© Christos S Magides · cyp11111@gmail.com</div></div>
+<div class="wrap" style="padding-top:0"><div class="foot"><p style="margin:0 0 12px">Ανώμαλα ρήματα και εξαιρέσεις της αγγλικής γραμματικής, με ελληνική μετάφραση και ήχο.</p><span>Αγγλικά σε 5 λεπτά · Έκδοση 16-10-2026 09:57</span><br>© Christos S Magides · <a href="#" data-grapse-mou style="color:inherit;cursor:pointer;pointer-events:auto">✏️ Γράψε μου</a></div></div>
 <script>
 const LANG=(function(){try{return localStorage.getItem("agglika5_lang")||"el"}catch(e){return "el"}})();
 const GR=LANG==="el";
@@ -325,5 +325,24 @@ function nextQ(){Q.pos++;if(Q.pos<Q.items.length)showQ();else{window.scrollTo(0,
 home();
 if("serviceWorker" in navigator&&location.protocol.startsWith("http")){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 </script>
+<script>/* ✏️ Γράψε μου — Christos S Magides — έκδοση 15-11-2026 */
+(function(){
+var L={el:["Γράψε μου","Μήνυμα από","Γεια σας κύριε Χρίστο,\n\nΣας γράφω για"],
+en:["Write to me","Message from","Hello Mr Christos,\n\nI am writing to you about"],
+de:["Schreiben Sie mir","Nachricht von","Guten Tag Herr Christos,\n\nich schreibe Ihnen wegen"],
+fr:["Écrivez-moi","Message de","Bonjour M. Christos,\n\nJe vous écris au sujet de"],
+es:["Escríbame","Mensaje desde","Hola Sr. Christos,\n\nLe escribo sobre"],
+it:["Scrivimi","Messaggio da","Buongiorno Sig. Christos,\n\nLe scrivo riguardo a"],
+ru:["Напишите мне","Сообщение из","Здравствуйте, господин Христос!\n\nПишу вам по поводу"],
+ar:["راسلني","رسالة من","مرحباً سيد خريستوس،\n\nأكتب إليك بخصوص"],
+tr:["Bana yazın","Mesaj","Merhaba Bay Christos,\n\nSize şu konuda yazıyorum:"]};
+function lg(){var l=(document.documentElement.lang||navigator.language||"el").slice(0,2).toLowerCase();return L[l]?l:"en"}
+function paint(){var q=document.querySelectorAll("[data-grapse-mou]");for(var i=0;i<q.length;i++){var t="\u270F\uFE0F "+L[lg()][0];if(q[i].textContent!==t)q[i].textContent=t}}
+document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("[data-grapse-mou]");if(!a)return;e.preventDefault();
+var t=L[lg()],n=document.title||location.hostname;
+location.href="mailto:"+["cyp","11111"].join("")+"@"+["gmail","com"].join(".")+"?subject="+encodeURIComponent(t[1]+": "+n)+"&body="+encodeURIComponent(t[2]+" \u00AB"+n+"\u00BB.\n\n")});
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",paint);else paint();
+try{new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]})}catch(e){}
+})();</script>
 </body>
 </html>
